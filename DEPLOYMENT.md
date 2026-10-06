@@ -15,7 +15,7 @@ This setup runs one Node process with a persistent SQLite volume behind a TLS re
 2. Change `Caddyfile.example` to use that exact domain, then configure it as the host Caddy site. Caddy must forward requests to `127.0.0.1:4173` and preserve the public `Host` header.
 3. Run `docker compose up -d --build`. The SQLite file is in the named `namu-data` volume, not in the container layer.
 4. Open `https://your-real-domain.example` and create the single owner account. Never publish `.env`, the `data` volume, database files, or `.namu` backups to GitHub.
-5. Add branches in **Settings → Branch management**, then create each employee account and assign the branch or branches they work at. Staff see only assigned branches; the owner can switch among all active branches.
+5. Add branches in **Settings → Branch management**, then create each employee account and assign exactly one branch. Staff see only their assigned branch; the owner can switch among all active branches.
 
 ## Operations before live data
 
