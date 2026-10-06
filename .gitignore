@@ -3,3 +3,11 @@ Thumbs.db
 *.log
 /data/
 *.namu
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+/backups/
+/work/

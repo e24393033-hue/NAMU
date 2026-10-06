@@ -1,0 +1,5 @@
+# Replace with a domain that points to this server.
+namu.example.kr {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:4173
+}

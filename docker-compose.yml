@@ -1,0 +1,22 @@
+services:
+  namu:
+    build: .
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NAMU_HOST: 0.0.0.0
+      NAMU_PORT: 4173
+      NAMU_DATA_DIR: /data
+      NAMU_ALLOWED_HOSTS: ${NAMU_ALLOWED_HOSTS:?Set your public domain and localhost}
+    ports:
+      - "127.0.0.1:4173:4173"
+    volumes:
+      - namu-data:/data
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4173/healthz').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  namu-data:

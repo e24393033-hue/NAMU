@@ -1,0 +1,9 @@
+.git
+.gitignore
+.env
+.env.*
+data
+work
+outputs
+node_modules
+*.namu
